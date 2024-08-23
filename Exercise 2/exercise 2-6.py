@@ -1,7 +1,7 @@
 from random import randint
-from random import random
 
-print("your 3-digit code combinations is: ", int(random()*1000))
+
+print("your 3-digit code combinations is: ", randint(100,999))
 
 a = randint(1,6)
 b = randint(1,6)
