@@ -1,4 +1,6 @@
 from random import uniform
+
+#main
 i = n = 0
 sample = int(input("please enter the number of random points: "))
 while i < sample:
@@ -7,5 +9,4 @@ while i < sample:
     if x*x + y*y < 1:
         n+=1
     i+=1
-
 print("Approximation of pi calculated by", sample,"random points is:", n*4/sample)

@@ -1,4 +1,6 @@
 from math import sqrt
+
+#main
 number = int(input("what number do you want to prime check? "))
 upper_limit = int(sqrt(number))
 for i in range(2,upper_limit+1):

@@ -1,7 +1,9 @@
 from random import randint
+
 def random_dice(max_value):
     return randint(1, max_value)
 
+#main
 max_value = int(input("Enter the maximum value of your dice: "))
 while True:
     print("Rolling dice ...")

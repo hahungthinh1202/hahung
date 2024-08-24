@@ -1,6 +1,8 @@
 from random import randint
-number = randint(1,10)
-guess = 0
+
+#main
+number  = randint(1,10)
+guess   = 0
 while guess != number:
     guess = int(input("Please guess a number between 1 and 10: "))
     if guess == number:

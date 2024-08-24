@@ -1,3 +1,4 @@
+#main
 i = 1
 while True:
     number_string = input("Enter a number: ")

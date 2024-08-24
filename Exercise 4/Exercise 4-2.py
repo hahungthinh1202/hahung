@@ -1,6 +1,7 @@
+#main
 number = 0
 while number >= 0:
-    number = float(input("Please enter distance in inches: "))
+    number = float(input("Please enter distance in inches (negative input to quit): "))
     if number != 1 and number >=0:
         print(number, "inches equal", number * 2.54, "cm")
     elif number == 1:

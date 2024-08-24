@@ -1,4 +1,6 @@
 from random import randint
+
+#main
 def random_dice():
     return randint(1,6)
 

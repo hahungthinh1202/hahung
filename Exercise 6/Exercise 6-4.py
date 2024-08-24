@@ -4,6 +4,7 @@ def list_sum(list):
         sum += i
     return sum
 
+#main
 print("Create list")
 my_list = []
 while True:

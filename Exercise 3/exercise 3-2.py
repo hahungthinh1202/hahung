@@ -1,3 +1,4 @@
+#main
 cabin_class = input("please enter the cabin class:\n")
 if cabin_class == "LUX":
     print("Your cabin class is upper-deck cabin with a balcony.")
