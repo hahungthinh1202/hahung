@@ -42,4 +42,4 @@ while True:
         break
     else:
         print("Invalid input!")
-        state = "0"
+        state = "0"             #return to menu state
