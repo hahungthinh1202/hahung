@@ -10,7 +10,7 @@ connection = mysql.connect(
 
 cursor = connection.cursor()
 area_code = input("please enter the area code (example FI for Finland): ")
-command = f"select name, type from airport where iso_country = '{area_code}' order by airport.type DESC;';"
+command = f"select name, type from airport where iso_country = '{area_code}' order by airport.type DESC;"
 cursor.execute(command)
 data = cursor.fetchall()
 print("the list of airport below")
