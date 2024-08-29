@@ -24,15 +24,20 @@ class elevator:
         self.current_floor -= 1
 
 #main
+print("Create new elevator....")
+top_floor = int(input("Enter your top floor: "))
+my_elevator = elevator(1, top_floor)
 
-my_elevator = elevator(1, 10)
-my_elevator.go_to_floor(5)
-print(my_elevator.current_floor)
+print("Using elevator....")
+while True:
+    to_floor = input(f"Current floor is {my_elevator.current_floor}. Enter floor you want to go(empty string to exit): ")
+    if to_floor == "":
+        print(f"Go back to bottom floor")
+        my_elevator.go_to_floor(my_elevator.bottom_floor)
+        break
+    else:
+        my_elevator.go_to_floor(int(to_floor))
 
-my_elevator.go_to_floor(7)
-print(my_elevator.current_floor)
 
-my_elevator.go_to_floor(my_elevator.bottom_floor)
-print(my_elevator.current_floor)
 
 

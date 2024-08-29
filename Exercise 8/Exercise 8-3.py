@@ -11,8 +11,8 @@ connection = mysql.connect(
 )
 
 cursor = connection.cursor()
-ICAO_code1 = input("please enter the first ICAO")
-ICAO_code2 = input("please enter the second ICAO")
+ICAO_code1 = input("please enter the first ICAO: ")
+ICAO_code2 = input("please enter the second ICAO: ")
 command = f"select name, latitude_deg, longitude_deg from airport where ident = '{ICAO_code1}';"
 cursor.execute(command)
 location1 = cursor.fetchall()

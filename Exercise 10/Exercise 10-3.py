@@ -34,6 +34,12 @@ class building:
     def run_elevator(self,elevator_number, goto_floor ):
         self.elevator_list[elevator_number-1].go_to_floor(goto_floor)
 
+    def fire_alarm(self):
+        print("FIRE !!!")
+        for i in range(len(self.elevator_list)):
+            print(f"Elevator {i+1} going down")
+            self.elevator_list[i].go_to_floor(self.bottom_floor)
+
 #main
 print("Create new building....")
 top_floor = int(input("Enter your top floor: "))
@@ -42,8 +48,12 @@ my_building = building(1, top_floor, elevator_count)
 print("Using elevator")
 print(f"There are {elevator_count} elevators in your building")
 while True:
-    current_elevator = int(input("Enter elevator number you want to use: "))
-    to_floor = input(f"Current floor of elevator {current_elevator} "
+    current_elevator = input("Enter elevator number you want to use: ")
+    if current_elevator == "":
+        break
+    else:
+        current_elevator = int(current_elevator)
+        to_floor = input(f"Current floor of elevator {current_elevator} "
                      f"is {my_building.elevator_list[current_elevator-1].current_floor}. "
                      f"Enter floor you want to go (empty string to exit): ")
     if to_floor == "":
@@ -53,6 +63,6 @@ while True:
     else:
         my_building.elevator_list[current_elevator-1].go_to_floor(int(to_floor))
 
-
+my_building.fire_alarm()
 
 
