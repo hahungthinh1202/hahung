@@ -10,5 +10,4 @@ for i in range(2,upper_limit+1):
     elif i == upper_limit:
         print(number, "is prime")
         break
-    else:
-        i += 1
+
