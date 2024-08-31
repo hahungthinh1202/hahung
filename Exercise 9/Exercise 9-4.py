@@ -16,8 +16,8 @@ class car:
 
     def drive(self, hours):
         self.travelled_distance = self.travelled_distance + self.current_speed * hours
-#main
 
+#main
 car_list = []
 for i in range(0,10):
     car_list.append( car("BRK-78"+str(i), randint(100,200)))
@@ -31,7 +31,7 @@ hour = 1
 print(f"Hour\t{car_list[0].registration_number:8}{car_list[1].registration_number:8}{car_list[2].registration_number:8}"\
       f"{car_list[3].registration_number:8}{car_list[4].registration_number:8}{car_list[5].registration_number:8}"
       f"{car_list[6].registration_number:8}{car_list[7].registration_number:8}{car_list[8].registration_number:8}{car_list[9].registration_number:8}")
-while finish_flag == -1:
+while finish_flag != -1:
     for i in range(0,10):
         car_list[i].accelerate(randint(-10,15))
         car_list[i].drive(1)

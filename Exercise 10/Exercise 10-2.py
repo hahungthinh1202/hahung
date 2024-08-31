@@ -10,12 +10,12 @@ class elevator:
         elif floor < self.current_floor:
             for i in range (1, self.current_floor-floor+1):
                 self.floor_down()
-                print(f"going down currently {self.current_floor}")
+                print(f"Going down to {self.current_floor}")
 
         elif floor > self.current_floor:
             for i in range (1, floor-self.current_floor+1):
                 self.floor_up()
-                print(f"going up currently {self.current_floor}")
+                print(f"Going up to {self.current_floor}")
 
     def floor_up(self):
         self.current_floor += 1
@@ -42,17 +42,20 @@ my_building = building(1, top_floor, elevator_count)
 print("Using elevator")
 print(f"There are {elevator_count} elevators in your building")
 while True:
-    current_elevator = int(input("Enter elevator number you want to use: "))
-    to_floor = input(f"Current floor of elevator {current_elevator} "
+    current_elevator = input(f"Enter elevator number you want to use (1 to {len(my_building.elevator_list)}) or empty string to exit: ")
+    if current_elevator == "":
+        break
+    else:
+        current_elevator = int(current_elevator)
+        to_floor = input(f"Current floor of elevator {current_elevator} "
                      f"is {my_building.elevator_list[current_elevator-1].current_floor}. "
                      f"Enter floor you want to go (empty string to exit): ")
     if to_floor == "":
         print(f"Go back to bottom floor")
-        my_building.elevator_list[current_elevator-1].go_to_floor(1)
+        my_building.run_elevator(current_elevator,1)
         break
     else:
-        my_building.elevator_list[current_elevator-1].go_to_floor(int(to_floor))
-
+        my_building.run_elevator(current_elevator,int(to_floor))
 
 
 
