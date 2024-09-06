@@ -21,10 +21,12 @@ class Car:
         self.travelled_distance = self.travelled_distance + self.current_speed * hours
 
 class race:
+    winning_car = None
     def __init__(self, name, distance, car):
         self.car = car
         self.name = name
         self.distance = distance
+
 
     def hour_passes(self):
         for i in range(len(self.car)):
@@ -41,26 +43,34 @@ class race:
     def race_finished(self):
         for i in range(len(self.car)):
             if self.car[i].travelled_distance >= self.distance:
+                self.winning_car = self.car[i]
                 return True
         return False
 
 #main
 car_list = []
+
+print("Creating car list....")
+car_list_table = PrettyTable()
+car_list_table.field_names = (["Car register number","Maximum speed"])
 for i in range(0, 10):
-    car_list.append(Car("BRK-78" + str(i), randint(100, 200)))
-    print(
-        f"Information of the car is:\nCar registation {car_list[i].registration_number}\nMaximum speed {car_list[i].maximum_speed}"
-        f"\nCurrent speed {car_list[i].current_speed}"
-        f"\nTravelled distance {car_list[i].travelled_distance}\n")
+    speed = randint(100, 200)
+    car_list.append(Car("BRK-78" + str(i),speed))
+    car_list_table.add_row(["BRK-78" + str(i), speed])
+
+print(car_list_table)
 
 my_race = race("Grand Demolition Derby", 8000, car_list)
+
+print(f"\n\n{my_race.name} starts....")
 hour_pass    = 0
 while not my_race.race_finished():
     my_race.hour_passes()
     hour_pass += 1
     if hour_pass % 10 == 0:
-        print(f"Standing after {hour_pass} hours:")
+        print(f"\nStanding after {hour_pass} hours:")
         my_race.print_status()
 
 print(f"Race finished after {hour_pass} hours, final standing:")
 my_race.print_status()
+print(f"The winning car is {my_race.winning_car.registration_number}")
