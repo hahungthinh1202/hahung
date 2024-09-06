@@ -13,7 +13,7 @@ cursor = connection.cursor()
 ICAO_code = "00GA"
 command = f"select latitude_deg, longitude_deg from airport where ident = '{ICAO_code}';"
 cursor.execute(command)
-data = cursor.fetchall()
+data =cursor.fetchall()
 print(data[0][0])
 
 
