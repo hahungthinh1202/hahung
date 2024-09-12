@@ -10,10 +10,10 @@ connection = mysql.connect(
     database='flight_game'
 )
 cursor = connection.cursor()
-ICAO_code = "00GA"
-command = f"select latitude_deg, longitude_deg from airport where ident = '{ICAO_code}';"
+ICAO_code = input("Please enter your ICAO code: ")
+command = f"select name, municipality from airport where ident = '{ICAO_code}';"
 cursor.execute(command)
 data =cursor.fetchall()
-print(data[0][0])
+print(f"the airport with {ICAO_code} code is {data[0][0]} and located in {data[0][1]}")
 
 
