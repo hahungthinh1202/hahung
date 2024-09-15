@@ -1,11 +1,9 @@
 def list_remove_odd_number(list):
-    remove_list = []
+    new_list = []
     for i in list:
-        if i%2 != 0:
-            remove_list.append(i)
-    for i in remove_list:
-        list.remove(i)
-    return list
+        if i % 2 == 0:
+            new_list.append(i)
+    return new_list
 
 #main
 print("Create list")
