@@ -20,7 +20,7 @@ class Car:
     def drive(self, hours):
         self.travelled_distance = self.travelled_distance + self.current_speed * hours
 
-class race:
+class Race:
     winning_car = None
     def __init__(self, name, distance, car):
         self.car = car
@@ -60,7 +60,7 @@ for i in range(0, 10):
 
 print(car_list_table)
 
-my_race = race("Grand Demolition Derby", 8000, car_list)
+my_race = Race("Grand Demolition Derby", 8000, car_list)
 
 print(f"\n\n{my_race.name} starts....")
 hour_pass    = 0
