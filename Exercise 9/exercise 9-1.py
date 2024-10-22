@@ -1,4 +1,4 @@
-class car:
+class Car:
     current_speed = 0
     travelled_distance = 0
     def __init__(self, registration_number, maximum_speed):
@@ -9,7 +9,7 @@ class car:
 reg_num = input("Enter your registration number: ")
 max_speed = input("Enter maximum speed: ")
 
-car_data = car(reg_num, max_speed)
+car_data = Car(reg_num, max_speed)
 
 print(f"Information of the car is:\nCar registation {car_data.registration_number}\nMaximum speed {car_data.maximum_speed}"
       f"\nCurrent speed {car_data.current_speed}"
