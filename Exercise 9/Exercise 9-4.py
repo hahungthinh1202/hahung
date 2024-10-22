@@ -36,16 +36,16 @@ for i in range(0,10):
 
 table.field_names = field_names     #Add the field name list into table
 while finish_flag != 1:
+    hour += 1
+    cars_cur_travelled_distanced.append(hour)
+
     for i in range(0,10):
         car_list[i].accelerate(randint(-10,15))
         car_list[i].drive(1)
-    for i in range(0,10):
         if car_list[i].travelled_distance >= 10000:
             finish_flag = 1
-    hour += 1
-    cars_cur_travelled_distanced.append(hour)
-    for i in range(0,10):
         cars_cur_travelled_distanced.append(car_list[i].travelled_distance)
+
     table.add_row(cars_cur_travelled_distanced)
     cars_cur_travelled_distanced.clear()
 
