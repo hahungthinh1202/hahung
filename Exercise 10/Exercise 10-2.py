@@ -23,7 +23,7 @@ class elevator:
     def floor_down(self):
         self.current_floor -= 1
 
-class building:
+class Building:
     def __init__(self, bottom_floor, top_floor, elevator_count):
         self.bottom_floor = bottom_floor
         self.top_floor = top_floor
@@ -38,7 +38,7 @@ class building:
 print("Create new building....")
 top_floor = int(input("Enter your top floor: "))
 elevator_count = int(input("Enter number of elevators: "))
-my_building = building(1, top_floor, elevator_count)
+my_building = Building(1, top_floor, elevator_count)
 print("Using elevator")
 print(f"There are {elevator_count} elevators in your building")
 while True:
