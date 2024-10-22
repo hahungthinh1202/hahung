@@ -12,8 +12,8 @@ class Car:
             self.current_speed = self.maximum_speed
         elif self.current_speed < 0:
             self.current_speed = 0
-#main
 
+#main
 reg_num = "BRK-782"     #input("Enter your registration number: ")
 max_speed = 120         #input("Enter maximum speed: ")
 

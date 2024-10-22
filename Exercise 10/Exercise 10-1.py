@@ -1,4 +1,4 @@
-class elevator:
+class Elevator:
     def __init__(self, bottom_floor, top_floor):
         self.bottom_floor = bottom_floor
         self.top_floor = top_floor
@@ -6,7 +6,7 @@ class elevator:
 
     def go_to_floor(self, floor):
         if floor < self.bottom_floor or floor > self.top_floor:
-            print("error")
+            print("Invalid floor")
         elif floor < self.current_floor:
             for i in range (1, self.current_floor-floor+1):
                 self.floor_down()
@@ -26,7 +26,7 @@ class elevator:
 #main
 print("Create new elevator....")
 top_floor = int(input("Enter your top floor: "))
-my_elevator = elevator(1, top_floor)
+my_elevator = Elevator(1, top_floor)
 
 print("Using elevator....")
 while True:

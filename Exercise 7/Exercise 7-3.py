@@ -17,7 +17,7 @@ def print_menu():
     print("\nMain menu, please enter number of the action: ")
     print(" 1. Enter new airport.")
     print(" 2. Fetch information of existing airport.")
-    print(" 3. Exit.")
+    print(" 3. E1xit.")
     return input()
 #main
 
@@ -30,12 +30,16 @@ airport = {
 state = "0"
 while True:
     if state == "0":            #menu state = 0
-        state = print_menu()
+        variable = print_menu()
+
+        state = variable
     elif state == "1":          #add data state = 1
         new_airport(airport)
+
         state = "0"             #return to menu state
     elif state == "2":
         fetch_airport(airport)  #fetch data state = 2
+
         state = "0"             #return to menu state
     elif state == "3":          #exit state
         print("Exit script, thank you!")

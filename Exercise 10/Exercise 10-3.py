@@ -1,4 +1,4 @@
-class elevator:
+class Elevator:
     def __init__(self, bottom_floor, top_floor):
         self.bottom_floor = bottom_floor
         self.top_floor = top_floor
@@ -6,7 +6,7 @@ class elevator:
 
     def go_to_floor(self, floor):
         if floor < self.bottom_floor or floor > self.top_floor:
-            print("error")
+            print("Invalid floor")
         elif floor < self.current_floor:
             for i in range (1, self.current_floor-floor+1):
                 self.floor_down()
@@ -29,7 +29,7 @@ class building:
         self.top_floor = top_floor
         self.elevator_list = []
         for i in range(elevator_count):
-            self.elevator_list.append(elevator(self.bottom_floor, self.top_floor))
+            self.elevator_list.append(Elevator(self.bottom_floor, self.top_floor))
 
     def run_elevator(self,elevator_number, goto_floor ):
         self.elevator_list[elevator_number-1].go_to_floor(goto_floor)
@@ -62,8 +62,6 @@ while True:
         break
     else:
         my_building.run_elevator(current_elevator,int(to_floor))
-
-
 my_building.fire_alarm()
 
 

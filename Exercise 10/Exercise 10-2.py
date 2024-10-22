@@ -1,4 +1,4 @@
-class elevator:
+class Elevator:
     def __init__(self, bottom_floor, top_floor):
         self.bottom_floor = bottom_floor
         self.top_floor = top_floor
@@ -6,7 +6,7 @@ class elevator:
 
     def go_to_floor(self, floor):
         if floor < self.bottom_floor or floor > self.top_floor:
-            print("error")
+            print("Invalid floor")
         elif floor < self.current_floor:
             for i in range (1, self.current_floor-floor+1):
                 self.floor_down()
@@ -23,13 +23,13 @@ class elevator:
     def floor_down(self):
         self.current_floor -= 1
 
-class building:
+class Building:
     def __init__(self, bottom_floor, top_floor, elevator_count):
         self.bottom_floor = bottom_floor
         self.top_floor = top_floor
         self.elevator_list = []
         for i in range(elevator_count):
-            self.elevator_list.append(elevator(self.bottom_floor, self.top_floor))
+            self.elevator_list.append(Elevator(self.bottom_floor, self.top_floor))
 
     def run_elevator(self,elevator_number, goto_floor ):
         self.elevator_list[elevator_number-1].go_to_floor(goto_floor)
@@ -38,7 +38,7 @@ class building:
 print("Create new building....")
 top_floor = int(input("Enter your top floor: "))
 elevator_count = int(input("Enter number of elevators: "))
-my_building = building(1, top_floor, elevator_count)
+my_building = Building(1, top_floor, elevator_count)
 print("Using elevator")
 print(f"There are {elevator_count} elevators in your building")
 while True:
