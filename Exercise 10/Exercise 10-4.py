@@ -29,27 +29,26 @@ class Race:
 
 
     def hour_passes(self):
-        for i in range(len(self.car)):
-            self.car[i].accelerate(randint(-10, 15))
-            self.car[i].drive(1)
+        for car in self.car:
+            car.accelerate(randint(-10, 15))
+            car.drive(1)
 
     def print_status(self):
         table = PrettyTable()
         table.field_names = ["Car register number", "Current speed", "Travelled distance"]
-        for i in range(len(self.car)):
-            table.add_row([self.car[i].registration_number, self.car[i].current_speed, self.car[i].travelled_distance])
+        for car in self.car:
+            table.add_row([car.registration_number, car.current_speed, car.travelled_distance])
         print(table)
 
     def race_finished(self):
-        for i in range(len(self.car)):
-            if self.car[i].travelled_distance >= self.distance:
-                self.winning_car = self.car[i]
+        for car in self.car:
+            if car.travelled_distance >= self.distance:
+                self.winning_car = car.registration_number
                 return True
         return False
 
 #main
 car_list = []
-
 print("Creating car list....")
 car_list_table = PrettyTable()
 car_list_table.field_names = (["Car register number","Maximum speed"])
@@ -73,4 +72,4 @@ while not my_race.race_finished():
 
 print(f"Race finished after {hour_pass} hours, final standing:")
 my_race.print_status()
-print(f"The winning car is {my_race.winning_car.registration_number}")
+print(f"The winning car is {my_race.winning_car}")
