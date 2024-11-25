@@ -1,57 +1,93 @@
-.button {
-    background-color: #e7ecb0;
-    color: #000000;
-    padding: 15px 32px;
-    text-align: center;
-    font-size: 16px;
-    border: 3px solid #a10000;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, sans-serif;
+    background-image: url("../static/img/background.jpg");
+    scroll-behavior: smooth;
 }
 
 .container{
-      background-color: lightblue;
+    width: 80%;
+    position: relative;
+    margin: auto;
+}
+
+header {
+    padding: 1rem;
+    background-color: rgba(255, 254, 224, 0.7);
+
+}
+
+.menu_item {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 1rem 2rem;
+    margin: 0.1rem;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
 }
 
 .button-contact{
     text-align: left;
 }
 
-.page_title{
+.main_title{
     font-size: 30px;
-    font-style: oblique;
     text-align: center;
+}
+.main_text{
+    font-size: 20px;
+    text-align: center;
+    margin: auto;
+    padding: 30px;
+    width: 80%;
 }
 .background_image{
     align-content: center;
 }
 
-.center {
+.main_img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+  margin: auto;
+  width: 100%;
 }
 .float_right{
     float: right;
 }
 
 .product_row{
-    display: table;
+    display: flex;
     width: 100%;
 }
 
 .product_image{
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 300px;
-    width: auto;
+    margin: auto;
+    width: 100%;
+}
+
+.figure_caption{
+    font-style: italic;
+    font-size: 12px;
 }
 
 .product_item{
-    display: table-cell;
-    background-color: red;
+    width: 33.33%;
+    padding: 0.5rem 0.5rem;
+
 }
 
 .product_title{
     text-align: center;
+}
+
+.contact{
+    width: 40%;
+    padding: 0.5rem 0.5rem;
+}
+.map{
+    width: 60%;
+    padding: 0.5rem 0.5rem;
 }

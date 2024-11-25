@@ -35,7 +35,9 @@ for i in range(0,10):
     field_names.append(car_name)    #Adding the remaining column, which are participated cars registration number
 
 table.field_names = field_names     #Add the field name list into table
+
 while finish_flag != 1:
+
     hour += 1
     cars_cur_travelled_distanced.append(hour)
 

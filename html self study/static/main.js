@@ -1,5 +1,4 @@
-const jaceDoesWork = () => {
-    return 'I dont wanna work anymore';
-};
-
-console.log(jaceDoesWork);
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+ctx.fillStyle = "red";
+ctx.fillRect(0,0,75,75);

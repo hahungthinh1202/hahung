@@ -3,7 +3,7 @@ from PIL import Image
 import numpy as np
 
 # Define the path to the PNG file
-image_path = '1729287408022.png'
+image_path = '1731986947592.png'
 
 # Open the image file using PIL
 image = Image.open(image_path)
@@ -19,14 +19,14 @@ letter = ('-','x')
 for i in image_array:
     for j in i:
         tempt = j.tolist()
-        if tempt == [0,0,0,0]:
+        if sum(tempt) <=100:
             str += letter[index%2]
         else:
             str += letter[(index+1)%2]
     str += '\n'
     for j in i:
         tempt = j.tolist()
-        if tempt != [0,0,0,0]:
+        if sum(tempt) >=100:
             str += letter[index%2]
         else:
             str += letter[(index+1)%2]
@@ -43,11 +43,6 @@ for i in image_array:
     str += '\n'
 """
 print(str)
-
-
-
-
-
 import matplotlib.pyplot as plt
 plt.imshow(image_array)
 plt.show()
