@@ -4,7 +4,7 @@ function check_leap_year(year){
 }
 
 let year = prompt("Please enter a year: ");
-var str = "";
+let str = "";
 if (check_leap_year(year)){
   str = " is leap year.";
 }

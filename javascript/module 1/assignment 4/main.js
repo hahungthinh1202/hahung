@@ -1,6 +1,6 @@
 let name  = prompt("please enter your name");
 let house = ""
-random_number = Math.floor(Math.random()*4);
+let random_number = Math.floor(Math.random()*4);
 
 switch (random_number){
     case 0:
