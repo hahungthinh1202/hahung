@@ -1,5 +1,3 @@
-
-
 output_object = document.getElementById("output");
 participant_array = [];
 participant_number = parseInt(prompt("Please enter the number of participant: "));
